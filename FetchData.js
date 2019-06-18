@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
     emitter.subscribe('search', data => {
         let filteredList = allMembers.filter(el => `${el.name.title} ${el.name.first} ${el.name.last}`.includes(data.data));
-        console.log(filteredList);
         emitter.emit('results', {value: filteredList});
     } )
 });
